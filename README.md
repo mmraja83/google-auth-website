@@ -2,6 +2,8 @@
 
 A professional, production-ready boilerplate for a web application featuring **Google SSO** and **Email/Password Authentication**. Built with **React (Vite)** and **Python (FastAPI)**, designed with a "Soft Minimalism" aesthetic.
 
+![App Demo](screenshots/demo.webp)
+
 ## Features
 
 - **Authentication**: JWT-based secure Access Tokens.
