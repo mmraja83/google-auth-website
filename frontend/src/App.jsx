@@ -3,20 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import DesignForm from './components/feature/DesignForm';
 import Layout from './components/layout/Layout';
+import DashboardHome from './components/dashboard/DashboardHome';
 import Profile from './pages/Profile';
+import VerifyEmail from './pages/VerifyEmail';
 import './index.css';
 
-const DashboardHome = () => {
-    const { user } = useAuth();
-    return (
-        <div className="dashboard-home">
-            <div className="soft-card welcome-card">
-                <h1>Hello, {user?.name || 'Friend'}!</h1>
-                <p>Welcome to your Soft Auth dashboard. Everything you need is right here.</p>
-            </div>
-        </div>
-    );
-};
+
 
 const ProtectedRoute = ({ children }) => {
     const { user, loading } = useAuth();
@@ -43,6 +35,10 @@ const AppRoutes = () => {
                     <Profile />
                 </ProtectedRoute>
             } />
+
+
+
+            <Route path="/verify-email" element={<VerifyEmail />} />
 
             <Route path="*" element={<Navigate to="/login" />} />
         </Routes>

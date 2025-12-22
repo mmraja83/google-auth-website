@@ -20,6 +20,12 @@ const DesignForm = () => {
         setError('');
         setSuccess('');
 
+        if (!email || !password) {
+            setError('Email and password are required');
+            setLoading(false);
+            return;
+        }
+
         if (isLogin) {
             const res = await login(email, password);
             if (!res.success) {

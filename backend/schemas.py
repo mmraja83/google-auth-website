@@ -27,6 +27,7 @@ class UserResponse(UserBase):
     address: Optional[str] = None
     is_active: bool
     is_google_user: bool
+    is_verified: bool
 
     class Config:
         from_attributes = True

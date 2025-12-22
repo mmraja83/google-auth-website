@@ -7,6 +7,7 @@ import models, schemas, database, auth
 
 from dotenv import load_dotenv
 import os
+import secrets
 
 load_dotenv()
 
@@ -42,8 +43,15 @@ def register(user: schemas.UserCreate, db: Session = Depends(database.get_db)):
         raise HTTPException(status_code=400, detail="Email already registered")
     
     hashed_password = auth.get_password_hash(user.password)
-    new_user = models.User(email=user.email, hashed_password=hashed_password, name=user.name)
+    verification_token = secrets.token_urlsafe(32)
+    new_user = models.User(email=user.email, hashed_password=hashed_password, name=user.name, verification_token=verification_token, is_verified=False)
     db.add(new_user)
+    
+    # Mock Email Sending
+    print(f"--- EMAIL VERIFICATION ---")
+    print(f"To: {user.email}")
+    print(f"Link: http://localhost:5173/verify-email?token={verification_token}")
+    print(f"--------------------------")
     db.commit()
     db.refresh(new_user)
     return new_user
@@ -78,7 +86,8 @@ def google_login(login_data: schemas.GoogleLogin, db: Session = Depends(database
         
         if not user:
             # Create new user for Google SSO
-            user = models.User(email=email, name=name, picture=picture, is_google_user=True)
+            # Google users are auto-verified
+            user = models.User(email=email, name=name, picture=picture, is_google_user=True, is_verified=True)
             db.add(user)
             db.commit()
             db.refresh(user)
@@ -111,3 +120,18 @@ def update_user_me(user_update: schemas.UserUpdate, current_user: models.User = 
     db.commit()
     db.refresh(current_user)
     return current_user
+
+@app.post("/verify-email/{token}")
+def verify_email(token: str, db: Session = Depends(database.get_db)):
+    user = db.query(models.User).filter(models.User.verification_token == token).first()
+    if not user:
+        raise HTTPException(status_code=400, detail="Invalid verification token")
+    
+    if user.is_verified:
+        return {"message": "Email already verified"}
+    
+    user.is_verified = True
+    user.verification_token = None # Invalidate token after use
+    db.commit()
+    
+    return {"message": "Email verified successfully"}

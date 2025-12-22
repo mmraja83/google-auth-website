@@ -13,3 +13,5 @@ class User(Base):
     address = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
     is_google_user = Column(Boolean, default=False)
+    is_verified = Column(Boolean, default=False)
+    verification_token = Column(String, nullable=True)

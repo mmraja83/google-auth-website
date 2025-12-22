@@ -31,6 +31,12 @@ const Profile = () => {
         setLoading(true);
         setMessage({ type: '', text: '' });
 
+        if (!formData.name.trim()) {
+            setMessage({ type: 'error', text: 'Full Name is required' });
+            setLoading(false);
+            return;
+        }
+
         try {
             const token = localStorage.getItem('token');
             const res = await axios.put('http://localhost:8000/users/me', formData, {
