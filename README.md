@@ -4,6 +4,8 @@ A professional, production-ready boilerplate for a web application featuring **G
 
 ![App Demo](screenshots/demo.webp)
 
+> **Tags:** `google-sso`, `authentication`, `fastapi`, `react`, `jwt`, `boilerplate`, `python`, `sqlite`, `soft-minimalism`, `glassmorphism`, `email-verification`
+
 ## Features
 
 - **Authentication**: JWT-based secure Access Tokens.

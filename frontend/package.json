@@ -3,6 +3,18 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "keywords": [
+        "react",
+        "vite",
+        "google-sso",
+        "authentication",
+        "boilerplate",
+        "fastapi",
+        "jwt",
+        "python",
+        "glassmorphism",
+        "soft-ui"
+    ],
     "scripts": {
         "dev": "vite",
         "build": "vite build",
