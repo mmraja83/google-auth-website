@@ -42,11 +42,7 @@ const Layout = ({ children }) => {
             <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
                 <div className="sidebar-header">
                     <div className="logo-circle-small">
-                        <div className="comfort-icon-small">
-                            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-                                <path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2z" fill="none" stroke="currentColor" strokeWidth="2.5" />
-                            </svg>
-                        </div>
+                        <img src="/logo.png" alt="Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                     </div>
                     {sidebarOpen && <span className="brand-name">Soft Auth</span>}
                     <button onClick={toggleSidebar} className="sidebar-toggle">

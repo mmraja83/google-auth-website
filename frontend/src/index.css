@@ -1043,7 +1043,21 @@ body {
 /* Profile Page */
 .profile-card {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 64px;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 24px;
+    }
 }
 
 .profile-header {

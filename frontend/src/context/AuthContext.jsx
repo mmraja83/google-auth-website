@@ -60,11 +60,26 @@ export const AuthProvider = ({ children }) => {
     const register = async (email, password, name) => {
         try {
             const res = await api.post('/register', { email, password, name });
-            // Auto login after register? Or ask to login?
-            // For boilerplate, let's just return true so UI can show success or auto-login.
             return { success: true };
         } catch (error) {
-            return { success: false, error: error.response?.data?.detail || 'Registration failed' };
+            let errorMessage = 'Registration failed';
+            if (error.response) {
+                // Server returned a response
+                if (error.response.status === 400 && error.response.data?.detail === "Email already registered") {
+                    errorMessage = "This email is already registered. Please sign in.";
+                } else if (error.response.status >= 500) {
+                    errorMessage = "Something went wrong on our server. Please try again later.";
+                } else {
+                    errorMessage = error.response.data?.detail || errorMessage;
+                }
+            } else if (error.request) {
+                // Request made but no response received
+                errorMessage = "Unable to connect to the server. Please check your internet connection.";
+            } else {
+                // Something else happened
+                errorMessage = error.message;
+            }
+            return { success: false, error: errorMessage };
         }
     }
 

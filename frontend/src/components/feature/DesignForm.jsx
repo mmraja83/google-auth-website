@@ -62,14 +62,7 @@ const DesignForm = () => {
                     <div className="comfort-header">
                         <div className="gentle-logo">
                             <div className="logo-circle">
-                                <div className="comfort-icon">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                        <path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2z" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                                        <path d="M12 16a4 4 0 108 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
-                                        <circle cx="20" cy="12" r="1.5" fill="currentColor" />
-                                    </svg>
-                                </div>
+                                <img src="/logo.png" alt="Logo" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
                                 <div className="gentle-glow"></div>
                             </div>
                         </div>
