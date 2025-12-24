@@ -14,6 +14,8 @@ A professional, production-ready boilerplate for a web application featuring **G
 - **Profile Management**: Update name, phone, and address.
 - **Modern UI**: Glassmorphism, soft animations, and responsive design.
 
+![Login Page](screenshots/login_polished.png)
+
 ## Prerequisites
 
 - Python 3.9+
