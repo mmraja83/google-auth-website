@@ -10,8 +10,8 @@ const DashboardHome = () => {
             <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap items-end justify-between gap-4">
                     <div>
-                        <h2 className="text-3xl font-bold text-text-main dark:text-white tracking-tight">Welcome back, {user?.name || 'User'}</h2>
-                        <p className="text-text-secondary dark:text-gray-400 mt-1">Here is your daily performance overview.</p>
+                        <h2 className="text-3xl font-bold text-text-main dark:text-white tracking-tight">Welcome back, {user?.name?.split(' ')[0] || 'User'}</h2>
+                        <p className="text-text-secondary dark:text-gray-400 mt-1">Logged in as <span className="font-medium text-text-main dark:text-gray-300">{user?.email}</span></p>
                     </div>
                     <div className="flex gap-3">
                         <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg text-sm font-medium text-text-main dark:text-gray-200 hover:bg-background-light dark:hover:bg-white/5 shadow-sm transition-all">
