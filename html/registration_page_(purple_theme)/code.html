@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registration - SaaS App</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f13ec",
+                        "primary-hover": "#6b10c7",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "surface-dark": "#251b30",
+                        "input-bg": "#261933",
+                        "border-dark": "#4d3267",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-display text-slate-900 dark:text-white selection:bg-primary selection:text-white">
+<!-- Background Effects -->
+<div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 w-full max-w-[480px] p-4">
+<!-- Registration Card -->
+<div class="w-full bg-white dark:bg-surface-dark rounded-2xl shadow-2xl border border-slate-200 dark:border-border-dark overflow-hidden backdrop-blur-sm">
+<!-- Header Section -->
+<div class="pt-8 pb-6 px-8 flex flex-col items-center text-center">
+<!-- Logo -->
+<div class="flex items-center gap-2 mb-6">
+<div class="size-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">token</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">Nexus SaaS</h2>
+</div>
+<!-- Page Heading -->
+<h1 class="text-2xl font-bold leading-tight tracking-tight mb-2">Create your account</h1>
+<p class="text-slate-500 dark:text-[#ad92c9] text-sm font-medium">Start your 14-day free trial. No credit card required.</p>
+</div>
+<!-- Content Area -->
+<div class="px-8 pb-8 flex flex-col gap-5">
+<!-- SSO Button -->
+<button class="group flex w-full cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-white dark:bg-[#362348] border border-slate-200 dark:border-border-dark hover:bg-slate-50 dark:hover:bg-[#432c5a] transition-colors gap-3">
+<svg class="w-5 h-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-semibold text-slate-700 dark:text-white">Sign up with Google</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-slate-200 dark:border-border-dark"></div>
+<span class="flex-shrink-0 mx-4 text-xs font-medium text-slate-400 dark:text-[#ad92c9]">OR REGISTER WITH EMAIL</span>
+<div class="flex-grow border-t border-slate-200 dark:border-border-dark"></div>
+</div>
+<!-- Registration Form -->
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault()">
+<!-- Full Name -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-slate-700 dark:text-white">Full Name</span>
+<div class="relative group/input">
+<div class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#ad92c9] group-focus-within/input:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-slate-50 dark:bg-input-bg border border-slate-200 dark:border-border-dark text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#ad92c9] focus:outline-none focus:border-primary dark:focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm" placeholder="e.g. Jane Doe" type="text"/>
+</div>
+</label>
+<!-- Email -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-slate-700 dark:text-white">Work Email</span>
+<div class="relative group/input">
+<div class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#ad92c9] group-focus-within/input:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-slate-50 dark:bg-input-bg border border-slate-200 dark:border-border-dark text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#ad92c9] focus:outline-none focus:border-primary dark:focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm" placeholder="name@company.com" type="email"/>
+</div>
+</label>
+<!-- Password -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-slate-700 dark:text-white">Password</span>
+<div class="relative group/input">
+<div class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#ad92c9] group-focus-within/input:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg bg-slate-50 dark:bg-input-bg border border-slate-200 dark:border-border-dark text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#ad92c9] focus:outline-none focus:border-primary dark:focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm" placeholder="Create a password" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:text-[#ad92c9] dark:hover:text-white transition-colors cursor-pointer flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Strength Meter Placeholder (visual only as per prompt) -->
+<div class="flex gap-1 mt-1 h-1">
+<div class="flex-1 bg-slate-200 dark:bg-border-dark rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary/40"></div>
+</div>
+<div class="flex-1 bg-slate-200 dark:bg-border-dark rounded-full"></div>
+<div class="flex-1 bg-slate-200 dark:bg-border-dark rounded-full"></div>
+<div class="flex-1 bg-slate-200 dark:bg-border-dark rounded-full"></div>
+</div>
+</label>
+<!-- Primary Action -->
+<button class="mt-4 w-full h-12 bg-primary hover:bg-primary-hover text-white rounded-lg font-bold text-sm transition-all shadow-[0_0_20px_rgba(127,19,236,0.3)] hover:shadow-[0_0_25px_rgba(127,19,236,0.5)] flex items-center justify-center gap-2">
+<span>Create Account</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Legal Text -->
+<p class="text-[11px] text-center text-slate-500 dark:text-[#ad92c9] leading-relaxed px-4">
+                        By signing up, you agree to our 
+                        <a class="underline hover:text-primary dark:hover:text-white transition-colors" href="#">Terms of Service</a> and 
+                        <a class="underline hover:text-primary dark:hover:text-white transition-colors" href="#">Privacy Policy</a>.
+                    </p>
+</form>
+</div>
+<!-- Footer Link -->
+<div class="bg-slate-50 dark:bg-[#1f1629] py-4 text-center border-t border-slate-200 dark:border-border-dark">
+<p class="text-sm text-slate-600 dark:text-slate-300">
+                    Already have an account? 
+                    <a class="text-primary font-bold hover:text-primary-hover transition-colors" href="#">Log in</a>
+</p>
+</div>
+</div>
+<!-- Trust Badges / Extra Context (Optional visual balance) -->
+<div class="mt-8 flex justify-center gap-6 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- Abstract representations of partner logos using simple shapes/text for boilerplate -->
+<div class="text-xs text-white font-semibold tracking-widest uppercase">Trusted by</div>
+<div class="h-4 w-16 bg-white/20 rounded"></div>
+<div class="h-4 w-16 bg-white/20 rounded"></div>
+<div class="h-4 w-16 bg-white/20 rounded"></div>
+</div>
+</div>
+</body></html>

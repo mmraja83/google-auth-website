@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registration Page</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#1d4ed8",
+                        "background-light": "#ffffff",
+                        "background-dark": "#101622",
+                        "surface-light": "#f8f9fc",
+                        "surface-dark": "#1a2230",
+                        "text-main": "#0d121b",
+                        "text-secondary": "#4c669a",
+                        "border-light": "#e7ebf3",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased h-screen overflow-hidden flex flex-col">
+<div class="flex flex-1 w-full h-full">
+<!-- Left Side: Registration Form -->
+<div class="w-full lg:w-1/2 flex flex-col justify-between h-full overflow-y-auto bg-background-light dark:bg-background-dark relative z-10">
+<!-- Header Logo -->
+<header class="px-8 py-6 lg:px-16 lg:py-8 flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-text-main dark:text-white">Apexify</span>
+</header>
+<!-- Form Content -->
+<div class="flex-1 flex flex-col justify-center px-8 lg:px-24 max-w-2xl mx-auto w-full py-8">
+<div class="mb-8">
+<h1 class="text-3xl lg:text-4xl font-black leading-tight tracking-tight text-text-main dark:text-white mb-3">
+                        Get started with Apexify
+                    </h1>
+<p class="text-text-secondary dark:text-slate-400 text-lg">
+                        Join thousands of enterprise teams boosting productivity.
+                    </p>
+</div>
+<!-- Google Auth -->
+<button class="flex w-full items-center justify-center gap-3 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark px-4 py-3.5 text-base font-bold text-text-main dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
+<svg aria-hidden="true" class="h-5 w-5" viewbox="0 0 24 24">
+<path d="M12.0003 20.45c4.6536 0 8.5521-3.2373 9.771-7.6364H12.0003V9.63635h13.0913c.1213.8824.1818 1.79155.1818 2.72725 0 7.2727-5.3637 12.3636-12.7273 12.3636-7.01851 0-12.72727-5.6548-12.72727-12.6364 0-6.98151 5.70876-12.63636 12.72727-12.63636 3.4182 0 6.2727 1.25455 8.4546 3.27273l-3.6 3.49091c-1.0364-1.00001-2.5636-1.52728-4.5091-1.52728-4.14545 0-7.58181 3.05455-7.58181 7.40001 0 4.3454 3.43636 7.4 7.58181 7.4Z" fill="currentColor"></path>
+</svg>
+<span>Sign up with Google</span>
+</button>
+<!-- Divider -->
+<div class="relative my-8">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-background-light dark:bg-background-dark px-4 text-sm text-text-secondary dark:text-slate-500">Or continue with email</span>
+</div>
+</div>
+<!-- Registration Form -->
+<form action="#" class="space-y-5" method="POST">
+<!-- Full Name -->
+<div>
+<label class="block text-sm font-semibold leading-6 text-text-main dark:text-slate-200 mb-1.5" for="name">Full Name</label>
+<div class="relative rounded-lg shadow-sm">
+<input class="block w-full rounded-lg border-0 py-3.5 px-4 text-text-main dark:text-white bg-surface-light dark:bg-surface-dark ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-all" id="name" name="name" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block text-sm font-semibold leading-6 text-text-main dark:text-slate-200 mb-1.5" for="email">Email address</label>
+<div class="relative rounded-lg shadow-sm">
+<input class="block w-full rounded-lg border-0 py-3.5 px-4 text-text-main dark:text-white bg-surface-light dark:bg-surface-dark ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-all" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block text-sm font-semibold leading-6 text-text-main dark:text-slate-200 mb-1.5" for="password">Password</label>
+<div class="relative rounded-lg shadow-sm">
+<input class="block w-full rounded-lg border-0 py-3.5 pl-4 pr-10 text-text-main dark:text-white bg-surface-light dark:bg-surface-dark ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 transition-all" id="password" name="password" placeholder="Create a password (min. 8 chars)" type="password"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" style="font-size: 20px;">visibility</span>
+</div>
+</div>
+</div>
+<!-- Create Account Button -->
+<button class="flex w-full justify-center rounded-lg bg-primary px-3 py-4 text-sm font-bold leading-6 text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-200 mt-2" type="submit">
+                        Create Account
+                    </button>
+<!-- Terms -->
+<p class="text-xs text-text-secondary dark:text-slate-500 text-center mt-4">
+                        By clicking "Create Account", you agree to our 
+                        <a class="font-medium text-primary hover:text-primary-hover underline" href="#">Terms of Service</a> and 
+                        <a class="font-medium text-primary hover:text-primary-hover underline" href="#">Privacy Policy</a>.
+                    </p>
+</form>
+</div>
+<!-- Footer Link -->
+<div class="px-8 lg:px-24 py-8 text-center">
+<p class="text-sm text-text-main dark:text-slate-300">
+                    Already have an account? 
+                    <a class="font-bold text-primary hover:text-primary-hover ml-1" href="#">Log in</a>
+</p>
+</div>
+</div>
+<!-- Right Side: Visual Panel -->
+<div class="hidden lg:flex w-1/2 bg-surface-light dark:bg-surface-dark relative overflow-hidden items-center justify-center p-12">
+<!-- Abstract Background Shapes -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl"></div>
+<div class="absolute top-[40%] -left-[10%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl"></div>
+<div class="absolute bottom-[10%] right-[10%] w-[300px] h-[300px] rounded-full bg-blue-400/10 blur-2xl"></div>
+<!-- Pattern Overlay -->
+<div class="absolute inset-0 opacity-[0.4]" style="background-image: radial-gradient(#135bec 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
+</div>
+<!-- Main Visual Card -->
+<div class="relative z-10 w-full max-w-lg">
+<div class="rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 border border-border-light dark:border-border-dark backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+<div class="h-48 w-full bg-gradient-to-r from-blue-500 to-indigo-600 relative">
+<img alt="Team Collaboration" class="w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Modern abstract office team collaboration meeting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA98MgbCMkjD41NxBq8POUl5Rv8LK5JqDdirVP4mtXoHGFOIehxwoykYUvkJn8N2BHr-sTUvyrzipaw4UXIsRnGEJ7wGAC68-TR3lLqjtODl25w-2tBhkvB2tb5o3YfJS3vsOGUXQftDo5M8UZWyI9bErHRzR3Nqm81Y4-spUuOYQw7WXh6SGdwWnGD--KxvUtqZUJLRbyTXsd_x1pVc8KBq5q46nKpVaLy_-VW-Nha3FX5cJbsBxb3rVBWSOYv-McpSXaDaCaoyu8"/>
+<div class="absolute bottom-4 left-6 text-white">
+<div class="flex items-center gap-1 bg-white/20 backdrop-blur-md rounded-full px-3 py-1 w-fit mb-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-xs font-medium">Growth +124%</span>
+</div>
+</div>
+</div>
+<div class="p-8">
+<div class="flex gap-1 text-yellow-400 mb-4">
+<span class="material-symbols-outlined filled text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<blockquote class="text-xl font-medium text-text-main dark:text-white leading-relaxed">
+                            "Apexify transformed how our enterprise teams communicate. The productivity boost was immediate and measurable."
+                        </blockquote>
+<div class="mt-6 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Sarah Jensen" class="h-full w-full object-cover" data-alt="Portrait of a smiling professional woman in business attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAENiWeCvRD1f2udRAtAmLi1Xz4XjOqfOqOzp1GrqYWLdXHQOdhHmQ2JHmZe64lsXAHchHoH9u-J3Gvtens3z-2pmn3mXyfbxVvfmS6R8raGu2sVhpywFEC2biNPqmz2SEMOOQqaTcSjkBw3yWZ2rooJdOKwSaq5Hm8cgCvU5ZTQK2kdY55qyfgOnbexJ2pEloiQKd5dVP07LT4aNMEdVqojLnCbBjVKfFDRn8FEUorBE9P22q6L1CYX4cXqJAiOg8LbV_WX4702fo"/>
+</div>
+<div>
+<p class="text-base font-bold text-text-main dark:text-white">Sarah Jensen</p>
+<p class="text-sm text-text-secondary dark:text-slate-400">CTO at TechFlow Inc.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Badge Decor -->
+<div class="absolute -right-8 -top-8 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg border border-border-light dark:border-border-dark flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+<div class="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary dark:text-slate-400">Enterprise Grade</p>
+<p class="text-sm font-bold text-text-main dark:text-white">SOC2 Compliant</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

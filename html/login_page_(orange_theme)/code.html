@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Login</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f27f0d",
+                        "primary-hover": "#d9700a",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c2219",
+                        "border-light": "#e8dbce",
+                        "border-dark": "#4a3b2f",
+                        "text-main": "#1c140d",
+                        "text-sub": "#9c7349",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(28, 20, 13, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased transition-colors duration-200">
+<div class="flex min-h-screen w-full flex-row overflow-hidden">
+<!-- Left Visual Section (Desktop Only) -->
+<div class="hidden lg:flex w-1/2 relative flex-col justify-between overflow-hidden bg-primary/10">
+<!-- Background Image -->
+<img class="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-80" data-alt="Abstract flowing orange and amber liquid waves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1l5VvbQNfQ69Jo-YvPNpPcPB6d1SSkb8QL2Xp1_hcvtKfN3zPt93hDsAp5HG9fLqSdsSgad6XqVG5z7ar8DkL626HPk94s-RdAhxCie39nzzHCr710GyE8nKDOrUJxpniyJQKDBxP5Q-i48yACFkeavnoUDlcdROEafv5GmGzKEQGLb39gpQejA_kE_IqrfmQQ1i2NPVmejLWEBoEPYm_PxPPQpGiY-nNYieM0ldefNOBkr4kp10n6EOmXas_SHC3irDuH0d6oLQ"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+<!-- Logo Area on Image -->
+<div class="relative z-10 p-12">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-4xl">grid_view</span>
+<span class="text-2xl font-bold tracking-tight">NexusFlow</span>
+</div>
+</div>
+<!-- Content on Image -->
+<div class="relative z-10 p-12 max-w-2xl">
+<div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white backdrop-blur-md mb-6">
+<span class="flex h-2 w-2 rounded-full bg-primary"></span>
+<span>New Dashboard V2.0</span>
+</div>
+<h2 class="text-4xl font-bold text-white leading-tight mb-4 drop-shadow-sm">
+                    Empower your team with <br/>seamless collaboration.
+                </h2>
+<p class="text-lg text-white/90 font-medium max-w-md leading-relaxed">
+                    Join over 4,000 enterprise teams building the future with our secure, scalable platform.
+                </p>
+</div>
+</div>
+<!-- Right Form Section -->
+<div class="flex w-full lg:w-1/2 flex-col items-center justify-center p-6 sm:p-12 relative bg-surface-light dark:bg-background-dark">
+<!-- Mobile Logo (Visible only on smaller screens) -->
+<div class="lg:hidden absolute top-6 left-6 flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+<span class="text-xl font-bold text-text-main dark:text-white">NexusFlow</span>
+</div>
+<div class="w-full max-w-[420px] flex flex-col">
+<!-- Header -->
+<div class="mb-8">
+<h1 class="text-3xl font-bold text-text-main dark:text-white tracking-tight mb-2">Welcome back</h1>
+<p class="text-text-sub dark:text-gray-400">Please enter your details to sign in to your dashboard.</p>
+</div>
+<!-- Google SSO Button -->
+<button class="group relative flex w-full items-center justify-center gap-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark px-4 py-3.5 text-base font-medium text-text-main dark:text-white transition-all hover:bg-gray-50 dark:hover:bg-white/5 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/50" type="button">
+<img alt="Google" class="h-5 w-5" data-alt="Google G Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5gvrGASpdZu2DtxXt-42of9vxNnND8rFDmFCYfoI-bzMoqroopUqXrbnKQ24S3-MsX1CBeaIhdLRDnZuiyZLAJ5WwxDPVSzTjXm72E34C5jsoC5X4Fk4wJB-P-HslVBYRCyM557TZQV-u99UN8ytjj8e8HyLdMOfbD6i4FOUwk1ZE0SE-T4gb7umtL03o_BEt2VYEJq3oe31o4dc7-JIjZOZC0uWiYUnCzIyJXlkjuoLk-vySnk9ffp2FQHGr4uVbOUmsRFe3k9U"/>
+<span>Sign in with Google</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center py-8">
+<div class="grow border-t border-border-light dark:border-border-dark"></div>
+<span class="mx-4 shrink-0 text-xs font-medium uppercase text-text-sub/80 dark:text-gray-500 tracking-wider">Or continue with</span>
+<div class="grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<!-- Form Fields -->
+<form class="flex flex-col gap-5">
+<!-- Email Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-text-main dark:text-gray-200" for="email">Email Address</label>
+<div class="relative group">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
+<span class="material-symbols-outlined text-text-sub dark:text-gray-500 text-[20px]">mail</span>
+</div>
+<input class="block w-full rounded-xl border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark pl-11 pr-4 py-3.5 text-text-main dark:text-white placeholder-text-sub/70 dark:placeholder-gray-600 focus:border-primary focus:ring-primary sm:text-sm shadow-sm transition-all" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-text-main dark:text-gray-200" for="password">Password</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
+<span class="material-symbols-outlined text-text-sub dark:text-gray-500 text-[20px]">lock</span>
+</div>
+<input class="block w-full rounded-xl border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark pl-11 pr-12 py-3.5 text-text-main dark:text-white placeholder-text-sub/70 dark:placeholder-gray-600 focus:border-primary focus:ring-primary sm:text-sm shadow-sm transition-all" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-text-sub hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me & Forgot Password -->
+<div class="flex items-center justify-between mt-1">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="h-5 w-5 rounded border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-primary focus:ring-offset-0 focus:ring-primary/20 cursor-pointer" type="checkbox"/>
+<span class="text-sm text-text-main dark:text-gray-300 group-hover:text-primary transition-colors">Remember me</span>
+</label>
+<a class="text-sm font-medium text-primary hover:text-primary-hover hover:underline transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- Submit Button -->
+<button class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-primary/25 hover:bg-primary-hover hover:shadow-primary/40 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-all transform active:scale-[0.99]" type="submit">
+                        Sign in
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Sign Up -->
+<p class="mt-8 text-center text-sm text-text-sub dark:text-gray-400">
+                    Don't have an account? 
+                    <a class="font-semibold text-primary hover:text-primary-hover hover:underline transition-colors" href="#">Sign up for free</a>
+</p>
+</div>
+<!-- Footer Meta -->
+<div class="absolute bottom-6 w-full text-center">
+<p class="text-xs text-text-sub/60 dark:text-gray-600">
+                    © 2024 NexusFlow Inc. <a class="hover:underline" href="#">Privacy</a> • <a class="hover:underline" href="#">Terms</a>
+</p>
+</div>
+</div>
+</div>
+</body></html>

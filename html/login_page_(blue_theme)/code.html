@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - SaaS Boilerplate</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622", // As per instructions
+                        "surface-dark": "#111722", // Matching the component examples
+                        "input-dark": "#232f48", // Matching the component examples
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden">
+<div class="flex min-h-screen w-full">
+<!-- Left Column: Visual / Branding -->
+<div class="relative hidden w-1/2 lg:flex flex-col justify-between overflow-hidden bg-surface-dark">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-purple-900/60 mix-blend-multiply z-10"></div>
+<div class="h-full w-full bg-cover bg-center opacity-60" data-alt="Abstract vibrant blue fluid 3D waves background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMJJqj7fIjqaoiuQ17mEYbFrJPX7jdmTts6pa4NKiULS-mXU053O8I0msSG3RvwGmX8FamRDurTXS_yg8b90k-bRBZ8yruI8-u211Jwhd7T6X6yi6ViRQdjsRWw4rf0pK4DKSciJOgiSOf9J6VD00zr83Z7DiNs88LiaF9ihleyqMH0O1DYoFzhJG1zkoZELcuu8XIouZdk9owkCDwz5Pbl_SLYpKqY_PcouH7W2ojwAk3KDMN7dHFZbtxUXNIfdJ7ut4AIuKZ0hs');">
+</div>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-20 flex h-full flex-col justify-between p-12">
+<!-- Logo area -->
+<div class="flex items-center gap-4 text-white">
+<div class="size-8">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-2xl font-bold tracking-tight">SaaS Boilerplate</span>
+</div>
+<div class="max-w-md">
+<p class="text-3xl font-bold leading-tight tracking-tight text-white mb-4">
+                        "The most efficient way to build your enterprise applications."
+                    </p>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of a smiling man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK5etVt4Xi2C9ezNBf9gpv-qpEyBWCXB6IZmgEe5zsoKTcP9UHH5wZqEqoAFa6WXMzqhhHZDMbb6zScGjb2kChAWgXSIbtoCJ7XHXl6QIOnposj-zs2ZZleKC0ShjhODzJfN-W-nZ0cRwgZwT2Ctu7JZ7SC2hmGZTUM6MyYvzDibcAz4WVxsMOmiyf25LutZkFGYla19TPTxem6p-QFJTDT6Ngz5UFnKEBqGpk3UvD1oFqEkvoX1FXLaEz2O3O2VH9_T3py6AZ6gI');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">Alex Morgan</span>
+<span class="text-xs text-slate-300">CTO at TechFlow</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Login Form -->
+<div class="flex w-full lg:w-1/2 flex-col justify-center bg-background-light dark:bg-background-dark px-6 py-12 lg:px-20 xl:px-32 transition-colors duration-300">
+<div class="mx-auto w-full max-w-[480px]">
+<!-- Mobile Logo (Visible only on small screens) -->
+<div class="mb-8 flex justify-center lg:hidden">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<div class="size-8">
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-bold">SaaS Boilerplate</span>
+</div>
+</div>
+<!-- Page Heading -->
+<div class="mb-10 text-center lg:text-left">
+<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] mb-3">Welcome back</h1>
+<p class="text-slate-500 dark:text-[#92a4c9] text-base font-normal leading-normal">Please enter your details to sign in.</p>
+</div>
+<!-- Google SSO Button -->
+<button class="flex w-full cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-lg h-12 bg-white dark:bg-input-dark border border-slate-200 dark:border-transparent text-slate-700 dark:text-white hover:bg-slate-50 dark:hover:bg-[#2f3e5e] transition-colors duration-200">
+<svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+<path d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z" fill="#4285F4"></path>
+<path d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.424 63.239 -14.754 63.239 Z" fill="#34A853"></path>
+<path d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.724 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z" fill="#FBBC05"></path>
+<path d="M -14.754 43.989 C -12.984 43.989 -11.404 44.599 -10.154 45.789 L -6.734 42.369 C -8.804 40.429 -11.514 39.239 -14.754 39.239 C -19.424 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z" fill="#EA4335"></path>
+</g>
+</svg>
+<span class="text-base font-bold leading-normal tracking-[0.015em]">Log in with Google</span>
+</button>
+<!-- Divider -->
+<div class="relative my-8">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200 dark:border-[#232f48]"></div>
+</div>
+<div class="relative flex justify-center text-sm font-medium leading-6">
+<span class="bg-background-light dark:bg-background-dark px-6 text-slate-500 dark:text-[#92a4c9]">OR</span>
+</div>
+</div>
+<!-- Form -->
+<form action="#" class="flex flex-col gap-5" method="POST">
+<!-- Email Input -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-white text-sm font-bold" for="email">Email address</label>
+<div class="relative">
+<input class="w-full rounded-lg bg-white dark:bg-input-dark border border-slate-200 dark:border-transparent text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 px-4 py-3 text-base focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-shadow" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-white text-sm font-bold" for="password">Password</label>
+<div class="relative group">
+<input class="w-full rounded-lg bg-white dark:bg-input-dark border border-slate-200 dark:border-transparent text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 px-4 py-3 text-base focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-shadow" id="password" name="password" placeholder="••••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-primary cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember & Forgot Password -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<input class="h-4 w-4 rounded border-slate-300 dark:border-[#232f48] bg-white dark:bg-[#232f48] text-primary focus:ring-primary" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="text-sm font-medium text-slate-600 dark:text-[#92a4c9]" for="remember-me">Remember me</label>
+</div>
+<a class="text-sm font-bold text-primary hover:text-blue-400" href="#">Forgot password?</a>
+</div>
+<!-- Submit Button -->
+<button class="mt-2 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-lg shadow-blue-900/20" type="submit">
+<span class="truncate">Sign in</span>
+</button>
+</form>
+<!-- Footer Sign Up -->
+<div class="mt-8 text-center">
+<p class="text-slate-600 dark:text-[#92a4c9] text-sm">
+                        Don't have an account? 
+                        <a class="font-bold text-primary hover:text-blue-400 ml-1" href="#">Sign up</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import DesignForm from './components/feature/DesignForm';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import Layout from './components/layout/Layout';
 import DashboardHome from './components/dashboard/DashboardHome';
 import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 import VerifyEmail from './pages/VerifyEmail';
 import './index.css';
 
@@ -21,8 +23,8 @@ const AppRoutes = () => {
     const { user } = useAuth();
     return (
         <Routes>
-            <Route path="/login" element={!user ? <DesignForm /> : <Navigate to="/dashboard" />} />
-            <Route path="/register" element={!user ? <DesignForm /> : <Navigate to="/dashboard" />} />
+            <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/dashboard" />} />
+            <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to="/dashboard" />} />
 
             <Route path="/dashboard" element={
                 <ProtectedRoute>
@@ -36,7 +38,11 @@ const AppRoutes = () => {
                 </ProtectedRoute>
             } />
 
-
+            <Route path="/settings" element={
+                <ProtectedRoute>
+                    <Settings />
+                </ProtectedRoute>
+            } />
 
             <Route path="/verify-email" element={<VerifyEmail />} />
 

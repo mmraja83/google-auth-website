@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Enterprise SaaS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#1d4ed8",
+                        "background-light": "#f8f9fa", // Slightly lighter than #f6f6f8 for crispness
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-white antialiased">
+<div class="min-h-screen w-full flex">
+<!-- Left Section: Login Form -->
+<div class="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 bg-white dark:bg-background-dark lg:w-1/2 border-r border-gray-100 dark:border-gray-800">
+<div class="mx-auto w-full max-w-sm lg:w-96">
+<!-- Logo Area -->
+<div class="mb-10">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-4xl">hexagon</span>
+<span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Nexus SaaS</span>
+</div>
+</div>
+<!-- Header -->
+<div class="flex flex-col gap-2 mb-8">
+<h2 class="text-3xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">Log in to your account</h2>
+<p class="text-sm text-[#4c669a] dark:text-gray-400">Welcome back! Please enter your details.</p>
+</div>
+<!-- Google SSO -->
+<div class="mt-6">
+<button class="flex w-full items-center justify-center gap-3 rounded-lg bg-white dark:bg-gray-800 px-3 py-3 text-sm font-semibold text-gray-700 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#135bec] transition-all duration-200">
+<svg aria-hidden="true" class="h-5 w-5" viewbox="0 0 24 24">
+<path class="dark:fill-white" clip-rule="evenodd" d="M12.0003 20.45c4.6593 0 8.3697-3.2384 9.682-7.8596h-9.682v-3.7917h15.681c.1481.8217.2222 1.6888.2222 2.625 0 2.2273-.6111 4.5422-1.8519 6.5516-1.574 2.5694-4.2222 4.2708-7.7963 4.2708-6.074 0-11.0001-4.9292-11.0001-11.0001s4.926-11.0001 11.0001-11.0001c2.8148 0 5.3703.9896 7.3703 2.6458l-3.2222 3.2292c-1.1111-1.0104-2.5185-1.5833-4.1481-1.5833-3.7407 0-6.7778 3.037-6.7778 6.7084 0 3.6713 3.037 6.7083 6.7778 6.7083z" fill="#0d121b" fill-rule="evenodd"></path>
+</svg>
+<span class="text-base font-medium">Sign in with Google</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="relative mt-8">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+<div class="relative flex justify-center text-sm font-medium leading-6">
+<span class="bg-white dark:bg-background-dark px-4 text-[#4c669a] dark:text-gray-400">Or continue with email</span>
+</div>
+</div>
+<!-- Form -->
+<div class="mt-8 space-y-6">
+<!-- Email -->
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-white mb-2" for="email">Email</label>
+<div class="relative">
+<input class="block w-full rounded-lg border-0 py-3 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-[#cfd7e7] dark:ring-gray-600 placeholder:text-[#4c669a] dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-[#f8f9fc] dark:bg-gray-800" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-white mb-2" for="password">Password</label>
+<div class="relative rounded-lg shadow-sm">
+<input class="block w-full rounded-lg border-0 py-3 pr-10 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-[#cfd7e7] dark:ring-gray-600 placeholder:text-[#4c669a] dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 bg-[#f8f9fc] dark:bg-gray-800" id="password" name="password" placeholder="••••••••••" type="password"/>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="material-symbols-outlined text-[#4c669a] dark:text-gray-400" style="font-size: 20px;">visibility_off</span>
+</div>
+</div>
+</div>
+<!-- Remember & Forgot -->
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-[#4c669a] dark:text-gray-400" for="remember-me">Remember for 30 days</label>
+</div>
+<div class="text-sm">
+<a class="font-medium text-primary hover:text-primary-hover" href="#">Forgot password?</a>
+</div>
+</div>
+<!-- Submit Button -->
+<div>
+<button class="flex w-full justify-center rounded-lg bg-primary px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-200" type="button">
+                            Sign in
+                        </button>
+</div>
+<!-- Footer Link -->
+<p class="text-center text-sm text-[#4c669a] dark:text-gray-400">
+                        Don't have an account?
+                        <a class="font-semibold leading-6 text-primary hover:text-primary-hover" href="#">Create account</a>
+</p>
+</div>
+</div>
+</div>
+<!-- Right Section: Hero Visual -->
+<div class="hidden lg:block relative w-0 flex-1 overflow-hidden bg-gray-50 dark:bg-gray-900">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 h-full w-full bg-cover bg-center" data-alt="Abstract blue geometric liquid waves background symbolizing modern technology" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDx0ojbFqnXntRn-eZjLz_m5EOQwm8YUatHhdd-ZD8nkP1suzDt44PoDkBz1JKmJR8DUP5mAextelmFWz682kF-b0thvcC8nuEpExnOOACcnU-8A1_66lsYo_rJ7VRjP9MhQLTVhTQZ4mhiLYiyPQKAtx9Oxbv5c5Hdwmlzbr46o7AjySHiE4Hr8A8Z5oiO2m-7ghUVWMQWa2-GCpgT6sD-Og2grBq3fS5FcBTUQakNU8TWwlrZyzFMKJ-8NOzPX1bSOum9wt3IWGQ');"></div>
+<!-- Gradient Overlay for Text Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-primary/40 mix-blend-multiply"></div>
+<!-- Content over Image -->
+<div class="absolute bottom-0 left-0 right-0 p-16 text-white z-10">
+<div class="mb-4">
+<span class="material-symbols-outlined text-5xl mb-4">auto_graph</span>
+</div>
+<h2 class="text-4xl font-bold tracking-tight mb-4">Start your journey with us.</h2>
+<p class="text-lg text-blue-100 max-w-md">
+                    Join over 4,000 developers and designers who are building the future with our comprehensive SaaS platform.
+                </p>
+<!-- Testimonial Mini-Card -->
+<div class="mt-8 flex items-center gap-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 max-w-md">
+<div class="h-10 w-10 rounded-full bg-blue-300 flex items-center justify-center text-primary font-bold">JD</div>
+<div>
+<p class="text-sm font-medium">"This platform revolutionized our workflow entirely."</p>
+<p class="text-xs text-blue-200">Jane Doe, CTO at TechCorp</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

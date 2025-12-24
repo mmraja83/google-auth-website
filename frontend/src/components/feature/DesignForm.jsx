@@ -62,7 +62,7 @@ const DesignForm = () => {
                     <div className="comfort-header">
                         <div className="gentle-logo">
                             <div className="logo-circle">
-                                <img src="/logo.png" alt="Logo" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
+                                <img src="/logo.svg" alt="Logo" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
                                 <div className="gentle-glow"></div>
                             </div>
                         </div>
